@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/_model/product';
 import { ProductService } from 'src/app/_service/product.service';
 
@@ -8,19 +9,29 @@ import { ProductService } from 'src/app/_service/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-    products:Product[];
+  products:Product[];
     
-    constructor(private ps:ProductService){
+  constructor(private ps:ProductService, private route:ActivatedRoute){
 
-    }
+  }
   
   ngOnInit(): void {
-            this.ps.getProduct(3).subscribe(data=>{
-               
-                this.products=data;
-              //  console.log(this.products);
-            });
+      this.route.params.subscribe(()=>{
+
+        const id=+this.route.snapshot.paramMap.get("cid");
+        this.fetchAllProducts(id);
+
+      });
+         
+           
            
   }
 
+  public fetchAllProducts(cid:number){
+    this.ps.getProduct(cid).subscribe(data=>{
+               
+      this.products=data;
+    //  console.log(this.products);
+  });
+  }
 }

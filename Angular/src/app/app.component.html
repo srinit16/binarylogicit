@@ -1,31 +1,7 @@
 <div class="page-wrapper">
 
   <!-- MENU SIDEBAR-->
-  <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
-      <a href="home.html">
-        <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
-      </a>
-    </div>
-    <div class="menu-sidebar-content js-scrollbar1">
-      <nav class="navbar-sidebar">
-        <ul class="list-unstyled navbar-list">
-          <li>
-            <a href="#">Books</a>
-          </li>
-          <li>
-            <a href="#">Coffee Mugs</a>
-          </li>
-          <li>
-            <a href="#">Mouse Pads</a>
-          </li>
-          <li>
-            <a href="#">Luggage Tags</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
+      <app-side-nav-bar></app-side-nav-bar>
   <!-- END MENU SIDEBAR-->
 
   <!-- PAGE CONTAINER-->
@@ -56,7 +32,7 @@
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
-      <app-product-details></app-product-details>
+     <router-outlet></router-outlet>
 
     <!-- END MAIN CONTENT-->
 

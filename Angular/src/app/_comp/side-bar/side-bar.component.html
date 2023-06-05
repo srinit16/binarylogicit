@@ -1,3 +1,4 @@
+Hello
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
       <a href="home.html">
@@ -7,20 +8,14 @@
     <div class="menu-sidebar-content js-scrollbar1">
       <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
-          <li>
-            <a routerLink="category/1">Books</a>
+          <li *ngFor="let pc of pcat">
+            <a routerLink="category/{{ pc.id }}">{{ pc.name }}</a>
           </li>
           <li>
-            <a routerLink="category/2">Coffee Mugs</a>
+            <a routerLink="home">Home</a>
           </li>
           <li>
-            <a routerLink="category/3">Mouse Pads</a>
-          </li>
-          <li>
-            <a routerLink="category/4">Luggage Tags</a>
-          </li>
-          <li>
-            <a routerLink=""> Home </a>
+            <a href="https://binarylogicit.com/">BinaryLogicIt</a>
           </li>
         </ul>
       </nav>

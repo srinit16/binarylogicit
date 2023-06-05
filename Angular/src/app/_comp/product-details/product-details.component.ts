@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/_model/product';
+import { Component } from '@angular/core';
+import { Item } from 'src/app/_model/item';
 import { ProductService } from 'src/app/_service/product.service';
+import {  OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -9,29 +10,25 @@ import { ProductService } from 'src/app/_service/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  products:Product[];
-    
-  constructor(private ps:ProductService, private route:ActivatedRoute){
+        product:Item[];
 
-  }
-  
-  ngOnInit(): void {
-      this.route.params.subscribe(()=>{
+      constructor(private ps:ProductService, private route:ActivatedRoute){
 
-        const id=+this.route.snapshot.paramMap.get("cid");
-        this.fetchAllProducts(id);
+      }
+      ngOnInit(): void {
+        this.route.paramMap.subscribe(()=>{
+          let cid:number=+this.route.snapshot.paramMap.get("id");
+          this.fetchAllProducts(cid);
+        });
+        
+      }
 
+      public fetchAllProducts(cid:number){
+        this.ps.getProduct(cid).subscribe(data=>{
+                   
+          this.product=data;
+        //  console.log(this.products);
       });
-         
-           
-           
-  }
+      }
 
-  public fetchAllProducts(cid:number){
-    this.ps.getProduct(cid).subscribe(data=>{
-               
-      this.products=data;
-    //  console.log(this.products);
-  });
-  }
 }

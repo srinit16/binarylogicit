@@ -1,32 +1,28 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from '../_model/product';
-import { Observable } from 'rxjs';
-import { ProductCategory } from '../_model/product-category';
+import { Item } from '../_model/item';
+import { ItemCategory } from '../_model/item-category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+ 
+  baseURL="http://localhost:5000/api/products";
+  constructor(private http:HttpClient) { 
 
-    baseURL="http://localhost:8080/api/products";
-   constructor(private http:HttpClient) {
-
-    }
-
-  public getProduct(cid:number): Observable<Product[]>{
-          const url= this.baseURL + "/findByCategory?id="+cid;
-          console.log(url);
-          return this.http.get<Product[]>(url);
-    }
-
-  public getCategoryList():Observable<ProductCategory[]>
-  {
-
-      // write code to requst information from backend restservice
-
-      return null;
   }
-          
-  
+
+  public getProduct(cid:number): Observable<Item[]>{
+    const url= this.baseURL + "/findByCategory?id="+cid;
+  //  console.log(url);
+    return this.http.get<Item[]>(url);
+  }
+
+  public getProductCategory():Observable<ItemCategory[]>{
+    const url= this.baseURL + "/category/all";
+    return this.http.get<ItemCategory[]>(url);
+
+  }
 }

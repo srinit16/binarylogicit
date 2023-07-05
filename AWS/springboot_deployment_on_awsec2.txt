@@ -1,0 +1,29 @@
+sudo -i
+java -version
+
+yum install wget
+
+
+wget https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.rpm
+yum install amazon*
+
+S3 Storage
+
+create bucket and upload jar
+
+once uploaded
+click the jar n make it public
+
+copy the object URL
+
+go to EC2 terminal and download zar file
+wget https://ecommerceoncc2.s3.us-east-2.amazonaws.com/eCommerceApp-0.0.1-SNAPSHOT.jar
+
+java - jar eCommerceApp-0.0.1-SNAPS.jar
+
+
+go to EC2 instance and find the public IP DNS URL 
+
+your application is ready in EC2 and you may submit REST URI to request query
+http://ec2-18-117-197-77.us-east-2.compute.amazonaws.com:5000/api/product-category
+

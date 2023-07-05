@@ -1,0 +1,17 @@
+wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+
+/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64
+
+/opt/maven/apache-maven-3.8.6
+
+* * * * *
+min hour date month day
+
+
+*/2 * * * *
+
+
+min = *
+
+
+http://ec2-3-18-104-250.us-east-2.compute.amazonaws.com:8080/github-webhook/

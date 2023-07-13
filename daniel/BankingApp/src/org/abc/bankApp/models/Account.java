@@ -2,9 +2,10 @@ package org.abc.bankApp.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Setter @Getter
-public class Account {
+@Setter @Getter  @ToString
+public class Account  {
 		private int id;
 		private double balance;
 		private double overdraftLimit;

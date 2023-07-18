@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.example.dao.ConnectionFactory;
 import com.example.dao.EmployeeDao;
@@ -34,9 +35,12 @@ public class HrController extends HttpServlet {
 					} catch (HRException ex) {
 						ex.printStackTrace();
 					}
-		request.setAttribute("emp", e);
-		RequestDispatcher reqDispatcher=request.getRequestDispatcher("EmployeeUI");
-		reqDispatcher.forward(request, response);			
+		//request.setAttribute("emp", e);
+		HttpSession session=request.getSession();
+		session.setAttribute("emp", e);
+//		RequestDispatcher reqDispatcher=request.getRequestDispatcher("EmployeeUI");
+//		reqDispatcher.forward(request, response);	
+		request.getRequestDispatcher("empdetails.jsp").forward(request, response);
 						
 	}
 

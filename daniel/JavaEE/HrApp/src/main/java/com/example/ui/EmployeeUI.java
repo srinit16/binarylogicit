@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.example.pojos.Employee;
 
@@ -17,11 +18,14 @@ public class EmployeeUI extends HttpServlet {
 	
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Employee d1=(Employee) request.getAttribute("emp");
+	//	Employee d1=(Employee) request.getAttribute("emp");
+		HttpSession session=request.getSession();
+	//	session.invalidate();
+		Employee d1=(Employee) session.getAttribute("emp");
 		PrintWriter pw=response.getWriter();
 		pw.println("<html><head><title>Emoloyee UI </title></head>");
 		pw.println("<body>");
-		pw.println("<h2> Employee Details </h2");
+		pw.println("<h2> Employee Details </h2>");
 		pw.println("<p>Emp Id:"+d1.getId());
 		pw.println("<p>Emp Name:"+d1.getName());
 		pw.println("<p>Salary:"+d1.getSalary());

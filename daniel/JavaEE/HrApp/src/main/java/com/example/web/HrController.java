@@ -3,6 +3,7 @@ package com.example.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,15 +34,9 @@ public class HrController extends HttpServlet {
 					} catch (HRException ex) {
 						ex.printStackTrace();
 					}
-					PrintWriter pw=response.getWriter();
-					pw.println("<html>");
-					pw.println("<body>");
-					pw.println("<p>Emp Id:"+e.getId());
-					pw.println("<p>Emp Name:"+e.getName());
-					pw.println("<p>Salary:"+e.getSalary());
-					pw.println("<p>Dept Id:"+e.getDeptId());
-					pw.println("</body>");
-					pw.println("</html>");
+		request.setAttribute("emp", e);
+		RequestDispatcher reqDispatcher=request.getRequestDispatcher("EmployeeUI");
+		reqDispatcher.forward(request, response);			
 						
 	}
 

@@ -45,7 +45,7 @@ public class EmployeeBL implements EmployeeDao{
 	public Employee findById(String id1) throws HRException {
 		
 		String jdbcURL ="jdbc:mysql://localhost:3306/practiceDB";
-		Employee e=new Employee();
+		Employee e=null;
 		
 		try(Connection con=DriverManager.getConnection(jdbcURL, "root", "admin#123");
 		    PreparedStatement st=con.prepareStatement("select * from employee where emp_id=?"))
@@ -59,7 +59,7 @@ public class EmployeeBL implements EmployeeDao{
 						String name=rs.getString("EMP_NAME");
 						double salary =rs.getDouble("SALARY");
 						int deptId=rs.getInt("DEPT_ID");
-					
+						e=new Employee();
 						e.setId(id);
 						e.setName(name);
 						e.setSalary(salary);

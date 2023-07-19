@@ -9,8 +9,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+
 import com.example.pojos.Employee;
 
+@Stateless
 public class EmployeeBL implements EmployeeDao{
 
 	@Override

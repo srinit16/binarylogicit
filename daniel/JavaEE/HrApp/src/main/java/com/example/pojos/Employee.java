@@ -1,5 +1,8 @@
 package com.example.pojos;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Employee {
 		private int id;
 		private String name;

@@ -19,7 +19,7 @@ public class BankingService {
 				Account acc2=dao.findAccount(targetAcc);
 				if((acc1.getBalance()+acc1.getOverdraftLimit()) >= amt) {
 					acc1.setBalance(acc1.getBalance()-amt);
-				
+					// update overdraft limit balance well
 					dao.updateAccount(acc1);
 					acc2.setBalance(acc2.getBalance()+amt);
 					dao.updateAccount(acc2);

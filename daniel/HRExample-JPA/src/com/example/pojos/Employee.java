@@ -3,9 +3,16 @@ package com.example.pojos;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQuery;
+
+
 @Entity @Table(name="EMPLOYEE")
+
+@NamedQuery(name="Employee.findAll", query="select e from Employee e")
+	
 public class Employee {
 		@Id @Column(name="EMP_ID")
 		private int id;

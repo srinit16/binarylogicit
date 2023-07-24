@@ -32,20 +32,26 @@ public class HrController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 					String id=request.getParameter("q");
-					EmployeeDao dao=ConnectionFactory.get().getConnection(); //new EmployeeBL();
-					Employee e=null;
-					try {
-						e=dao.findById(id);
-						
-					} catch (HRException ex) {
-						ex.printStackTrace();
+					String blabel=request.getParameter("b1");
+					if(blabel.equals("Find")) {
+						EmployeeDao dao=ConnectionFactory.get().getConnection(); //new EmployeeBL();
+						Employee e=null;
+						try {
+							e=dao.findById(id);
+							
+						} catch (HRException ex) {
+							ex.printStackTrace();
+						}
+					
+					//request.setAttribute("emp", e);
+					HttpSession session=request.getSession();
+					session.setAttribute("emp", e);
+			//		RequestDispatcher reqDispatcher=request.getRequestDispatcher("EmployeeUI");
+			//		reqDispatcher.forward(request, response);	
+					request.getRequestDispatcher("empdetails.jsp").forward(request, response);
+					}else {
+						//other logic to insert
 					}
-		//request.setAttribute("emp", e);
-		HttpSession session=request.getSession();
-		session.setAttribute("emp", e);
-//		RequestDispatcher reqDispatcher=request.getRequestDispatcher("EmployeeUI");
-//		reqDispatcher.forward(request, response);	
-		request.getRequestDispatcher("empdetails.jsp").forward(request, response);
 						
 	}
 

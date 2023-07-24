@@ -17,7 +17,8 @@
 		SALARY: <input type="text" name="salary" value="${emp.salary}"> <BR>
 		DEPTID: <input type="text" name="deptId" value="${emp.deptId}">  <BR>
 		
-		<input type="submit" value="Find"/><input type="submit" value="Insert"/>
+		<input type="submit" name="b1" value="Find"/><input type="submit" name="b1" value="Insert"/>
+		
 	</form>
 </c:if>
 

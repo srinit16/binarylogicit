@@ -4,3 +4,5 @@ org.eclipse.jdt.*
 org.eclipse.m2e.*
 .settings
 .classpath
+.project
+/target/

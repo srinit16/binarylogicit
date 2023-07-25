@@ -11,8 +11,8 @@ public class Account  {
 		private double overdraftLimit;
 		private String custId;
 		private int accType;
-		public Account(int id, double balance, double overdraftLimit, String custId, int accType) {
-			this.id = id;
+		public Account(int id1, double balance, double overdraftLimit, String custId, int accType) {
+			this.id = id1;
 			this.balance = balance;
 			this.overdraftLimit = overdraftLimit;
 			this.custId = custId;

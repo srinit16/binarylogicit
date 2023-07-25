@@ -3,9 +3,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	  
-	<bean id="helloworld" class="com.example.beans.HelloWorld" scope="prototype">
+	<bean id="helloworld" class="com.example.beans.HelloWorld" scope="prototype" >
 			<property name="name" value="Nitin"/>
+			<property name="add" ref="add1">
+			
+			</property>
+			
 		
+	</bean>
+	
+	<bean id="add1" class="com.example.beans.Address" scope="prototype">
+			<property name="line" value="12 Long Mansion"/>
+			<property name="city" value="Ohio"/>
 	</bean>
 
 </beans>

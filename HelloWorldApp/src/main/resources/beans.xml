@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    					http://www.springframework.org/schema/beans/spring-beans.xsd
+    					http://www.springframework.org/schema/context
+    					http://www.springframework.org/schema/spring-context-5.0.xsd">
 	  
-	<bean id="helloworld" class="com.example.beans.HelloWorld" scope="prototype" >
-			<property name="name" value="Nitin"/>
-			<property name="add" ref="add1">
-			
-			</property>
-			
-		
+    <bean id="helloworld" class="com.example.beans.HelloWorld" scope="prototype">
+    	<property name="name" value="BinaryLogicIt"/>
 	</bean>
 	
 	<bean id="add1" class="com.example.beans.Address" scope="prototype">
 			<property name="line" value="12 Long Mansion"/>
 			<property name="city" value="Ohio"/>
 	</bean>
-
+	 <context:annotation-config/> 
 </beans>

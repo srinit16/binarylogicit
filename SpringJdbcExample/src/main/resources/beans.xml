@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    					http://www.springframework.org/schema/beans/spring-beans.xsd
+    					http://www.springframework.org/schema/context
+    					http://www.springframework.org/schema/context/spring-context.xsd">
+	  
+    <context:annotation-config/> 
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    		<!--  maven dependency -> meta-inf - services - open java.sql.Driver file to read -->
+    		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+    		<property name="url" value="jdbc:mysql://localhost:3306/bankingdb"></property>
+    		<property name="username" value="root"></property>
+    		<property name="password" value="admin#123"></property>
+    </bean>
+    
+    <bean id="accountOperation" class="com.example.dao.AccountOperation">
+    		<property name="jt" ref="jdbcTemplate"></property>
+    </bean>
+    
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    		<property name="dataSource" ref="ds"></property>
+    </bean>
+    
+	 
+</beans>

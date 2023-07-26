@@ -5,8 +5,10 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     					http://www.springframework.org/schema/beans/spring-beans.xsd
     					http://www.springframework.org/schema/context
-    					http://www.springframework.org/schema/spring-context-5.0.xsd">
+    					http://www.springframework.org/schema/context/spring-context.xsd">
 	  
+    <context:annotation-config/> 
+    
     <bean id="helloworld" class="com.example.beans.HelloWorld" scope="prototype">
     	<property name="name" value="BinaryLogicIt"/>
 	</bean>
@@ -15,5 +17,5 @@
 			<property name="line" value="12 Long Mansion"/>
 			<property name="city" value="Ohio"/>
 	</bean>
-	 <context:annotation-config/> 
+	 
 </beans>

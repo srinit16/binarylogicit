@@ -12,9 +12,6 @@ public class HelloWorld {  // POJO
 	@Autowired
 	private Address add;
 	
-	
-	
-	
 	public String getName() {
 		return name;
 	}

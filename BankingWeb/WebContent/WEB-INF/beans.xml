@@ -11,7 +11,7 @@
     					http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	  
     <web:annotation-driven/>
-    
+    <context:component-scan base-package="org.va"/>
     <bean id="viewResolover" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     		<property name="prefix" value="/WEB-INF/views/"></property>
     		<property name="suffix" value=".jsp"></property>

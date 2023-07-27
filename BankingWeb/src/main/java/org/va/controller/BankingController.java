@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BankingController {
 		
-		@RequestMapping(value="/", method=RequestMethod.GET)
+		@RequestMapping(value="/bank", method=RequestMethod.GET)
 		public String goToHome(String name,Model model) {
 			//e=dao.findById(1)
 			name="Binary Logic IT";

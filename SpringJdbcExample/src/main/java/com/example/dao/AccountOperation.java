@@ -9,7 +9,7 @@ import com.example.util.AccountMapper;
 
 import lombok.Getter;
 import lombok.Setter;
-@Setter @Getter
+//@Setter @Getter
 public class AccountOperation implements AccountDao {
 	
 	private JdbcTemplate jt;
@@ -25,4 +25,18 @@ public class AccountOperation implements AccountDao {
 		return false;
 	}
 
+	public boolean create(Account acc) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public JdbcTemplate getJt() {
+		return jt;
+	}
+
+	public void setJt(JdbcTemplate jt) {
+		this.jt = jt;
+	}
+	
+	
 }

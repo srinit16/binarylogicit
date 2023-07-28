@@ -1,0 +1,10 @@
+Employee
+int id
+String name
+double salary
+int deptId
+
+
+Using Lambda & Stream
+1. Find the employee whose salary is greater than 2000 and display them in descending order by salary.
+2. Continue the same stream to print total salary paid to all employee in dept 201;

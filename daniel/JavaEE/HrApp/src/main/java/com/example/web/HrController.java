@@ -31,6 +31,10 @@ public class HrController extends HttpServlet {
     
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+					String header=request.getHeader("user-agent");
+					if(header.contains("mobile")) {
+						
+					}
 					String id=request.getParameter("q");
 					String blabel=request.getParameter("b1");
 					if(blabel.equals("Find")) {

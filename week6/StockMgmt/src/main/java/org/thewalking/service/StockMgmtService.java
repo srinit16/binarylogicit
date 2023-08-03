@@ -30,5 +30,18 @@ public class StockMgmtService {
 			m.setInfo("Product Registered Successfully");
 			return m;
 	}
-
+	
+	public Message updateProduct(Product p) {
+		Message m=new Message();
+		Product p1=this.find(p.getId());
+		if(p1.getId()!=null) {
+			p1=p;
+			pdao.save(p1);
+			m.setInfo("Product updated Successfully");
+		}else {
+			m.setInfo("Product Doesnt Exist");
+		}
+		
+		return m;
+}
 }

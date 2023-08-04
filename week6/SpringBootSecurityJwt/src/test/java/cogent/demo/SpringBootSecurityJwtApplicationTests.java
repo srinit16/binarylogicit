@@ -1,13 +1,13 @@
-package org.thewalking;
+package cogent.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StockMgmtApplicationTests {
+class SpringBootSecurityJwtApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-	
+
 }

@@ -18,8 +18,6 @@ public class StockMgmtService {
 		 Optional<Product> opt=pdao.findById(id);
 		 if(opt.isPresent()) {
 			 p=opt.get();
-		 }else {
-			 p=new Product();
 		 }
 		 return p;
 	}

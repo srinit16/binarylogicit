@@ -21,7 +21,7 @@ public class MyList<T> {
 		}
 		
 		public void remove(T value) {
-//			for(int x=0;x<size();x++) {
+//			for(int x=0;x<this.size();x++) {
 //				if(value==list[x]) {
 //					
 //				}

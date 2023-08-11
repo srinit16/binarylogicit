@@ -8,7 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,10 +27,6 @@ public class Product {
     @Column(name = "id")
     private Integer id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "category_id", nullable = false)
-//    private ProductCategory category;
-    
     @Column(name = "sku")
     private String sku;
 
@@ -59,6 +56,10 @@ public class Product {
     @UpdateTimestamp
     private Date lastUpdated;
     
-    @Column(name = "category_id")
-    private Integer categoryId;
+//    @Column(name = "category_id")
+//    private Integer categoryId;
+    
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName="category_id", nullable = false)
+    private ProductCategory category;
 }

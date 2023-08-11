@@ -17,7 +17,7 @@
   			<param-value>/WEB-INF/beans.xml</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
-  </servlet>x
+  </servlet>
   <servlet-mapping>
   		<servlet-name>dispatcher</servlet-name>
   		<url-pattern>/</url-pattern>

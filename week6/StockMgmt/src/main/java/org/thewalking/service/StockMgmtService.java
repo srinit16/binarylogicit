@@ -1,11 +1,14 @@
 package org.thewalking.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thewalking.dao.ProductCategoryDao;
 import org.thewalking.dao.ProductDao;
 import org.thewalking.entities.Product;
+import org.thewalking.entities.ProductCategory;
 import org.thewalking.util.Message;
 
 @Service
@@ -13,6 +16,9 @@ public class StockMgmtService {
 	@Autowired
 	private ProductDao pdao;
 	
+	@Autowired
+	private ProductCategoryDao pcdao;
+	// 1
 	public  Product  find(int id) {
 		 Product p=null;
 		 Optional<Product> opt=pdao.findById(id);
@@ -22,6 +28,10 @@ public class StockMgmtService {
 		 return p;
 	}
 	
+	public  List<ProductCategory>  findCategory() {
+		return pcdao.findAll();
+	}
+	//2
 	public Message addProduct(Product p) {
 			pdao.save(p);
 			Message m=new Message();
@@ -42,4 +52,9 @@ public class StockMgmtService {
 		
 		return m;
 }
+	
+	public  List<Product>  findByCategory(int id) {
+				return pdao.findByCategoryId(id);
+		
+	}
 }
